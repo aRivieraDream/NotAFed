@@ -1,0 +1,22 @@
+<rss xmlns:blogChannel="http://news.pitchbook.com/dRSS" version="2.0">
+  <channel>
+    <title>PitchBook SEC News</title>
+    <link>http://news.pitchbook.com/</link>
+    <description>Converted form D links from replica.</description>
+    <language>en-us</language>
+    <copyright>Copyright 2016 PitchBook Data, Inc</copyright>
+    <lastBuildDate>{{ build_date }}</lastBuildDate>
+    <docs>http://news.pitchbook.com</docs>
+    <managingEditor>pierce.young@pitchbook.com</managingEditor>
+    <webMaster>pierce.young@pitchbook.com</webMaster>
+    {% for story in filings %}
+    <item>
+      <title>{{ story.title }}</title>
+      <!--link>{{ story.sec_link }}</link-->
+      <description>{{ story.story }}</description>
+      <pubDate>{{ story.pub_date }}</pubDate>
+      <guid>{{ story.uid }}</guid>
+    </item>
+    {% endfor %}
+  </channel>
+</rss>
